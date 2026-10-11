@@ -44,14 +44,7 @@ The dataset is not stored in this repository. Stock prices are downloaded automa
 
 Outputs: `data/final_output.csv`, `data/processed/`, `results/` (figures + JSON metrics), `models/`.
 
-## Troubleshooting
-- **Yahoo download fails / rate-limited:** save a CSV `Date,Close_Price,Volume` per ticker in `data/raw/prices/<TICKER>.csv`
-  and run `python run_pipeline.py --offline`.
-- **Few tickers survive:** tickers with <30 matching posts are dropped (printed in the log). Choose tickers with `--tickers`.
-- **Sliders look wrong in the app:** they adapt to your data; if sentiment is tiny, lower the threshold slider.
-- **Strategy loses to Buy & Hold:** that is a legitimate finding; 
-
-## Method in one paragraph
+## Method 
 Posts are matched to tickers, scored with VADER (+ WSB slang), aggregated per trading day, and combined with price features.
 A pooled Random Forest / XGBoost predicts the realised volatility of the next 5 trading days using expanding-window
 walk-forward validation (5-day gap), so every prediction is out-of-sample. The strategy goes long/short on sentiment

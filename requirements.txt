@@ -1,0 +1,12 @@
+pandas>=2.0
+numpy
+scikit-learn
+xgboost
+vaderSentiment
+yfinance
+matplotlib
+streamlit
+joblib
+pytest
+# optional:
+#   transformers torch        (run_pipeline.py --sentiment finbert)

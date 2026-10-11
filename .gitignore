@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.venv/
+data/raw/*.csv
+data/raw/prices/
+data/processed/
+models/
+deliverables_demo/*.pdf
+deliverables_demo/*.jpg
+deliverables/*.pdf
